@@ -1,0 +1,9 @@
+{
+  "name": "eccr-picture-audio-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node --check picturebook/app.js && node --check picturebook/yaw_books.js && node --check audio/app.js",
+    "serve": "python3 -m http.server 4173"
+  }
+}

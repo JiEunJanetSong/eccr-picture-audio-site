@@ -1,0 +1,18 @@
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+
+[[redirects]]
+  from = "/picturebook"
+  to = "/picturebook/"
+  status = 301
+
+[[redirects]]
+  from = "/audio"
+  to = "/audio/"
+  status = 301

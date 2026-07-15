@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ECCR Audio Practice</title>
+    <link rel="stylesheet" href="style.css?v=20260715-audio-1" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <a class="brand-mark" href="../">ECCR</a>
+          <div>
+            <h1>Audio Practice</h1>
+            <p>Produced by Team Kairos</p>
+          </div>
+        </div>
+        <div class="tools">
+          <label>
+            <span>Book</span>
+            <select id="bookSelect"></select>
+          </label>
+          <label>
+            <span>English voice</span>
+            <select id="englishVoiceSelect"></select>
+          </label>
+          <label>
+            <span>Twi voice</span>
+            <select id="twiVoiceSelect"></select>
+          </label>
+          <span id="statusPill" class="status-pill">Ready</span>
+        </div>
+      </header>
+
+      <section class="content">
+        <aside class="pages">
+          <div class="section-title">Pages</div>
+          <div id="pageList" class="page-list"></div>
+        </aside>
+        <section class="items">
+          <div class="items-head">
+            <div>
+              <strong id="pageTitle">Page</strong>
+              <span id="pageMeta"></span>
+            </div>
+            <button id="playPageBtn" class="secondary-btn" type="button">Play page</button>
+          </div>
+          <div id="audioList" class="audio-list"></div>
+        </section>
+      </section>
+
+      <audio id="ttsAudio" playsinline></audio>
+    </main>
+
+    <script src="../shared/config.js?v=20260715-audio-1"></script>
+    <script src="../picturebook/yaw_books.js?v=20260715-audio-1"></script>
+    <script src="app.js?v=20260715-audio-1"></script>
+  </body>
+</html>
