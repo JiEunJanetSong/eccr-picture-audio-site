@@ -19,7 +19,7 @@ const ENGLISH_VOICES = [
 
 const TWI_VOICES = [{ value: "mms-aka", label: "MMS Akan/Twi" }];
 
-const books = Array.isArray(globalThis.YAW_PICTURE_BOOKS) ? globalThis.YAW_PICTURE_BOOKS : [];
+const books = (Array.isArray(globalThis.YAW_PICTURE_BOOKS) ? globalThis.YAW_PICTURE_BOOKS : []).slice().sort(compareBooks);
 
 const state = {
   bookId: books[0]?.id || "",
@@ -34,6 +34,15 @@ const state = {
 const els = {};
 
 document.addEventListener("DOMContentLoaded", init);
+
+function compareBooks(a, b) {
+  return getBookNumber(a) - getBookNumber(b);
+}
+
+function getBookNumber(book) {
+  const match = String(book?.id || book?.title || "").match(/(\d+)/);
+  return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
+}
 
 function init() {
   Object.assign(els, {
@@ -178,6 +187,11 @@ async function playSequence(items, token) {
 function playItem(item, button) {
   const token = ++state.playbackToken;
   const text = item.speechText || item.text;
+  const url = buildTtsUrl(text, item);
+  if (!url) {
+    els.statusPill.textContent = "Audio coming soon";
+    return Promise.resolve();
+  }
   clearPlaying();
   stopAudio(false);
   button?.classList.add("playing");
@@ -185,7 +199,7 @@ function playItem(item, button) {
 
   return new Promise((resolve) => {
     state.audio.pause();
-    state.audio.src = buildTtsUrl(text, item);
+    state.audio.src = url;
     state.audio.currentTime = 0;
     state.audio.onended = () => {
       finishPlayback(token, button);
@@ -247,6 +261,9 @@ function getItemTtsConfig(item = {}) {
 function buildTtsUrl(text, item = {}) {
   const config = getItemTtsConfig(item);
   const apiBase = String(globalThis.ECCR_TTS_API_BASE || "").replace(/\/$/, "");
+  if (!apiBase) {
+    return "";
+  }
   const params = new URLSearchParams({
     text,
     engine: config.engine,

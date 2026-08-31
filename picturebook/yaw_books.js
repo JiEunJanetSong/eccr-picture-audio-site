@@ -1,7 +1,7 @@
 const YAW_PICTURE_BOOKS = [
   {
     "id": "yaw-janet-3",
-    "title": "Yaw Janet 3: Twi Phrases",
+    "title": "Book3",
     "assetDir": "assets/yaw-janet-3",
     "pages": [
       {
@@ -577,7 +577,7 @@ const YAW_PICTURE_BOOKS = [
   },
   {
     "id": "yaw-janet-4",
-    "title": "Yaw Janet 4: Aku and the Cat",
+    "title": "Book4",
     "assetDir": "assets/yaw-janet-4",
     "pages": [
       {
@@ -992,7 +992,7 @@ const YAW_PICTURE_BOOKS = [
   },
   {
     "id": "yaw-janet-5",
-    "title": "Yaw Janet 5: Twi Story Reader",
+    "title": "Book5",
     "assetDir": "assets/yaw-janet-5",
     "pages": [
       {
@@ -1303,7 +1303,7 @@ const YAW_PICTURE_BOOKS = [
   },
   {
     "id": "yaw-janet-6",
-    "title": "Yaw Janet 6: Twi Letter Cards",
+    "title": "Book6",
     "assetDir": "assets/yaw-janet-6",
     "pages": [
       {

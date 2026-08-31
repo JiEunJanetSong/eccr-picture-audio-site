@@ -24,7 +24,7 @@ const TWI_VOICES = [
 const books = [
   {
     "id": "book7",
-    "title": "Book 7: Sam and the Cat",
+    "title": "Book7",
     "assetDir": "assets/book7",
     "pages": [
       {
@@ -482,7 +482,7 @@ const books = [
   },
   {
     "id": "book8",
-    "title": "Book 8: The Duck in the Pond",
+    "title": "Book8",
     "assetDir": "assets/book8",
     "pages": [
       {
@@ -933,7 +933,7 @@ const books = [
   },
   {
     "id": "book9",
-    "title": "Book 9: The Little Fox",
+    "title": "Book9",
     "assetDir": "assets/book9",
     "pages": [
       {
@@ -1279,6 +1279,8 @@ if (Array.isArray(globalThis.YAW_PICTURE_BOOKS)) {
   books.push(...globalThis.YAW_PICTURE_BOOKS);
 }
 
+books.sort(compareBooks);
+
 const state = {
   bookId: books[0].id,
   pageIndex: 0,
@@ -1287,6 +1289,15 @@ const state = {
   englishVoice: DEFAULT_ENGLISH_TTS.voice,
   twiVoice: DEFAULT_TWI_TTS.voice,
 };
+
+function compareBooks(a, b) {
+  return getBookNumber(a) - getBookNumber(b);
+}
+
+function getBookNumber(book) {
+  const match = String(book?.id || book?.title || "").match(/(\d+)/);
+  return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
+}
 
 const els = {};
 
@@ -1478,13 +1489,17 @@ function nextPage() {
 
 function playText(text, button) {
   const token = ++state.playbackToken;
+  const item = getPageAudioItems(getPage())[Number(button.dataset.audioIndex)];
+  const url = buildTtsUrl(text, item);
+  if (!url) {
+    els.statusPill.textContent = "Audio coming soon";
+    return;
+  }
   clearPlaying();
   stopAudio(false);
   button.classList.add("playing");
   els.statusPill.textContent = "Playing";
 
-  const item = getPageAudioItems(getPage())[Number(button.dataset.audioIndex)];
-  const url = buildTtsUrl(text, item);
   state.audio.pause();
   state.audio.src = url;
   state.audio.currentTime = 0;
@@ -1545,6 +1560,9 @@ function getIdleStatusText() {
 function buildTtsUrl(text, item = {}) {
   const config = getItemTtsConfig(item);
   const apiBase = String(globalThis.ECCR_TTS_API_BASE || "").replace(/\/$/, "");
+  if (!apiBase) {
+    return "";
+  }
   const params = new URLSearchParams({
     text,
     engine: config.engine,
