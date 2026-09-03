@@ -1328,9 +1328,6 @@ function init() {
   renderVoiceOptions();
   bindEvents();
   render();
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
 }
 
 function bindEvents() {

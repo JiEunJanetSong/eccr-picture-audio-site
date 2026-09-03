@@ -204,9 +204,12 @@ h1 {
   right: 12px;
 }
 
-.page-turn svg {
+.page-turn span {
+  display: block;
   width: 23px;
   height: 23px;
+  font-size: 34px;
+  line-height: 19px;
 }
 
 .page-turn:disabled {
@@ -231,6 +234,42 @@ h1 {
 
 .page-nav-head strong {
   color: var(--ink);
+}
+
+.page-nav-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.offline-btn {
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 10px;
+  background: #ffffff;
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.offline-btn[data-state="saving"] {
+  background: #fff8df;
+  border-color: #e5cf7a;
+  color: #6f5910;
+}
+
+.offline-btn[data-state="ready"] {
+  background: var(--green-soft);
+  border-color: #a9d2b8;
+  color: var(--green-dark);
+}
+
+.offline-btn[data-state="error"] {
+  background: #fff0ee;
+  border-color: #e7b8b2;
+  color: #8a3329;
 }
 
 .page-dots {
