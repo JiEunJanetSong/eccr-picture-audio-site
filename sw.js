@@ -1,6 +1,6 @@
 importScripts("./offline-assets.js");
 
-const CACHE_NAME = "eccr-offline-book3-20260904-1";
+const CACHE_NAME = "eccr-scroll-header-20260904-1";
 const OFFLINE_ASSETS = self.ECCR_OFFLINE_ASSETS || [];
 
 self.addEventListener("install", (event) => {
