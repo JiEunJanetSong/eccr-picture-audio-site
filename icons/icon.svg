@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#2f7d4c"/>
+  <rect x="96" y="120" width="320" height="248" rx="28" fill="#ffffff"/>
+  <path d="M128 168h128v160H128z" fill="#e6f2eb"/>
+  <path d="M256 168h128v160H256z" fill="#f6faf7"/>
+  <path d="M256 168v160" stroke="#2f7d4c" stroke-width="12"/>
+  <text x="256" y="428" text-anchor="middle" font-family="Arial, sans-serif" font-size="78" font-weight="800" fill="#ffffff">ECCR</text>
+</svg>

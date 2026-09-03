@@ -1279,6 +1279,10 @@ if (Array.isArray(globalThis.YAW_PICTURE_BOOKS)) {
   books.push(...globalThis.YAW_PICTURE_BOOKS);
 }
 
+if (Array.isArray(globalThis.ECCR_A4_BOOKS)) {
+  books.splice(0, books.length, ...globalThis.ECCR_A4_BOOKS);
+}
+
 books.sort(compareBooks);
 
 const state = {
@@ -1383,7 +1387,7 @@ function renderVoiceOptions() {
 function render() {
   const book = getBook();
   const page = getPage();
-  els.pageImage.src = `${book.assetDir}/page-${state.pageIndex + 1}.png`;
+  els.pageImage.src = getPageImageSrc(book, page);
   els.pageImage.alt = `${book.title}, ${page.title}`;
   els.pageTitle.textContent = page.title;
   els.pageCounter.textContent = `${state.pageIndex + 1} / ${book.pages.length}`;
@@ -1391,6 +1395,10 @@ function render() {
   els.nextBtn.disabled = state.pageIndex >= book.pages.length - 1;
   renderHotspots(getPageAudioItems(page));
   renderPageDots(book);
+}
+
+function getPageImageSrc(book, page) {
+  return `${book.assetDir}/${page.image || `page-${state.pageIndex + 1}.png`}`;
 }
 
 function getPageAudioItems(page) {
@@ -1430,7 +1438,20 @@ function getSpeechText(item) {
 }
 
 function getHotspotBoxes(item) {
+  if (item.audioSrc && item.audioSrc.startsWith("audio/book3/")) {
+    return [getBook3A4HotspotBox()];
+  }
   return item.boxes || [item.box || estimateHotspotBox(item)];
+}
+
+function getBook3A4HotspotBox() {
+  if (state.pageIndex === 29) {
+    return { x: 27, y: 78, w: 38, h: 8 };
+  }
+  if (state.pageIndex >= 21 && state.pageIndex <= 28) {
+    return { x: 14, y: 77, w: 72, h: 13 };
+  }
+  return { x: 28, y: 77, w: 44, h: 11 };
 }
 
 function getHotspotStyle(box) {
@@ -1558,6 +1579,9 @@ function getIdleStatusText() {
 }
 
 function buildTtsUrl(text, item = {}) {
+  if (item.audioSrc) {
+    return item.audioSrc;
+  }
   const config = getItemTtsConfig(item);
   const apiBase = String(globalThis.ECCR_TTS_API_BASE || "").replace(/\/$/, "");
   if (!apiBase) {

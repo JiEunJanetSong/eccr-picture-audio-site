@@ -19,7 +19,10 @@ const ENGLISH_VOICES = [
 
 const TWI_VOICES = [{ value: "mms-aka", label: "MMS Akan/Twi" }];
 
-const books = (Array.isArray(globalThis.YAW_PICTURE_BOOKS) ? globalThis.YAW_PICTURE_BOOKS : []).slice().sort(compareBooks);
+const sourceBooks = Array.isArray(globalThis.ECCR_A4_BOOKS)
+  ? globalThis.ECCR_A4_BOOKS
+  : (Array.isArray(globalThis.YAW_PICTURE_BOOKS) ? globalThis.YAW_PICTURE_BOOKS : []);
+const books = sourceBooks.slice().sort(compareBooks);
 
 const state = {
   bookId: books[0]?.id || "",
@@ -259,6 +262,9 @@ function getItemTtsConfig(item = {}) {
 }
 
 function buildTtsUrl(text, item = {}) {
+  if (item.audioSrc) {
+    return `../picturebook/${item.audioSrc}`;
+  }
   const config = getItemTtsConfig(item);
   const apiBase = String(globalThis.ECCR_TTS_API_BASE || "").replace(/\/$/, "");
   if (!apiBase) {
