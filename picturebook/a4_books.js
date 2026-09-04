@@ -8,12 +8,19 @@
     return `page-${String(pageNumber).padStart(2, "0")}.jpg`;
   }
 
+  function hotspot(boxOrBoxes) {
+    if (Array.isArray(boxOrBoxes)) {
+      return { boxes: boxOrBoxes.map((box) => ({ ...box })) };
+    }
+    return { box: { ...boxOrBoxes } };
+  }
+
   function recording(text, audioSrc, box = BODY_BOX, lang = "twi") {
-    return { text, speechText: text, audioSrc, box: { ...box }, lang };
+    return { text, speechText: text, audioSrc, ...hotspot(box), lang };
   }
 
   function missing(text, box, lang = "twi") {
-    return { text, speechText: text, box: { ...box }, lang, recordingMissing: true };
+    return { text, speechText: text, ...hotspot(box), lang, recordingMissing: true };
   }
 
   function page(pageNumber, title, audio = []) {
@@ -215,6 +222,99 @@
         recordedPage(6, 9, "kw · kwaeɛ · forest", "kw, kwaeɛ, forest", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
         recordedPage(6, 10, "hw · hwɛ · look", "hw, hwɛ, look", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
         recordedPage(6, 11, "nw · nwom · song / music", "nw, nwom, song or music", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
+        page(12, "Credits"),
+      ],
+    },
+    {
+      id: "book7",
+      title: "Book7",
+      assetDir: "assets/book7",
+      pages: [
+        page(1, "Sam and the Cat", [
+          recording("Sam and the Cat", "audio/book7/title.mp3", { x: 22, y: 12, w: 56, h: 9 }, "en"),
+          missing("Short /a/ Reader", { x: 32, y: 20, w: 36, h: 6 }, "en"),
+        ]),
+        page(2, "Sam and the Cat", [
+          recording("Sam and the Cat", "audio/book7/title.mp3", { x: 22, y: 17, w: 56, h: 8 }, "en"),
+          missing("Short /a/ Reader", { x: 32, y: 28, w: 36, h: 7 }, "en"),
+        ]),
+        page(3, "Target Sound", [
+          recording(
+            "Target Sound: short a",
+            "audio/book7/page-03-heading.mp3",
+            [
+              { x: 30, y: 8, w: 40, h: 7 },
+              { x: 40, y: 15, w: 20, h: 6 },
+            ],
+            "en"
+          ),
+          recording("/a/", "audio/book7/page-03-sound.mp3", { x: 37, y: 22, w: 26, h: 13 }, "en"),
+          recording("cat", "audio/book7/page-03-cat.mp3", { x: 21, y: 35, w: 12, h: 7 }, "en"),
+          recording("mat", "audio/book7/page-03-mat.mp3", { x: 32, y: 35, w: 12, h: 7 }, "en"),
+          recording("cap", "audio/book7/page-03-cap.mp3", { x: 43, y: 35, w: 12, h: 7 }, "en"),
+          recording("bag", "audio/book7/page-03-bag.mp3", { x: 54, y: 35, w: 12, h: 7 }, "en"),
+          recording("jam", "audio/book7/page-03-jam.mp3", { x: 65, y: 35, w: 13, h: 7 }, "en"),
+        ]),
+        page(4, "Simple Sentences", [
+          recording("Simple Sentences", "audio/book7/page-04-heading.mp3", { x: 28, y: 8, w: 44, h: 7 }, "en"),
+          recording("Sam has a cap.", "audio/book7/page-04-01.mp3", { x: 47, y: 28, w: 36, h: 8 }, "en"),
+          recording("The cat sat.", "audio/book7/page-04-02.mp3", { x: 47, y: 51, w: 30, h: 8 }, "en"),
+          recording("A man has a bag.", "audio/book7/page-04-03.mp3", { x: 47, y: 74, w: 40, h: 8 }, "en"),
+        ]),
+        page(5, "More Reading Practice", [
+          recording("More Reading Practice", "audio/book7/page-05-heading.mp3", { x: 22, y: 8, w: 56, h: 7 }, "en"),
+          recording("Sam can pat the cat.", "audio/book7/page-05-01.mp3", { x: 17, y: 64, w: 48, h: 8 }, "en"),
+          recording("The cat sat on a mat.", "audio/book7/page-05-02.mp3", { x: 17, y: 71, w: 50, h: 7 }, "en"),
+          recording("Sam and the cat sat.", "audio/book7/page-05-03.mp3", { x: 17, y: 77, w: 49, h: 8 }, "en"),
+        ]),
+        page(6, "Short Paragraph", [
+          recording("Short Paragraph", "audio/book7/page-06-heading.mp3", { x: 28, y: 8, w: 44, h: 7 }, "en"),
+          recording("Sam has a cat.", "audio/book7/page-06-01.mp3", { x: 17, y: 57, w: 34, h: 7 }, "en"),
+          recording("The cat sat on a mat.", "audio/book7/page-06-02.mp3", { x: 17, y: 62, w: 45, h: 7 }, "en"),
+          recording("Sam can pat the cat.", "audio/book7/page-06-03.mp3", { x: 17, y: 68, w: 44, h: 7 }, "en"),
+          recording("The cat ran at a rat.", "audio/book7/page-06-04.mp3", { x: 17, y: 73, w: 44, h: 7 }, "en"),
+          recording("Sam and the cat sat.", "audio/book7/page-06-05.mp3", { x: 17, y: 78, w: 44, h: 7 }, "en"),
+        ]),
+        page(7, "Story Continues", [
+          recording("Story Continues", "audio/book7/page-07-heading.mp3", { x: 28, y: 8, w: 44, h: 7 }, "en"),
+          recording("Sam had a bag.", "audio/book7/page-07-01.mp3", { x: 17, y: 57, w: 35, h: 7 }, "en"),
+          recording("The cat ran to the bag.", "audio/book7/page-07-02.mp3", { x: 17, y: 62, w: 48, h: 7 }, "en"),
+          recording("Sam ran after the cat.", "audio/book7/page-07-03.mp3", { x: 17, y: 68, w: 47, h: 7 }, "en"),
+          recording("The cat sat by the bag.", "audio/book7/page-07-04.mp3", { x: 17, y: 73, w: 48, h: 7 }, "en"),
+          recording("Sam was glad.", "audio/book7/page-07-05.mp3", { x: 17, y: 78, w: 35, h: 7 }, "en"),
+        ]),
+        page(8, "Think and Talk", [
+          recording("Think and Talk", "audio/book7/page-08-heading.mp3", { x: 29, y: 8, w: 42, h: 7 }, "en"),
+          recording("Who has a cat?", "audio/book7/page-08-01.mp3", { x: 18, y: 29, w: 42, h: 9 }, "en"),
+          recording("Where did the cat sit?", "audio/book7/page-08-02.mp3", { x: 18, y: 45, w: 56, h: 9 }, "en"),
+          recording("Why was Sam glad?", "audio/book7/page-08-03.mp3", { x: 18, y: 61, w: 52, h: 9 }, "en"),
+        ]),
+        page(9, "Writing Activity", [
+          recording(
+            "Writing Activity: Write",
+            "audio/book7/page-09-heading.mp3",
+            [
+              { x: 28, y: 8, w: 44, h: 7 },
+              { x: 16, y: 23, w: 20, h: 7 },
+            ],
+            "en"
+          ),
+          recording("cat", "audio/book7/page-09-cat.mp3", { x: 19, y: 28, w: 13, h: 7 }, "en"),
+          recording("mat", "audio/book7/page-09-mat.mp3", { x: 19, y: 33, w: 14, h: 7 }, "en"),
+          recording("bag", "audio/book7/page-09-bag.mp3", { x: 19, y: 38, w: 14, h: 7 }, "en"),
+          recording("Sam", "audio/book7/page-09-sam.mp3", { x: 19, y: 43, w: 15, h: 7 }, "en"),
+          recording(
+            "Complete: The cat sat on a blank.",
+            "audio/book7/page-09-complete.mp3",
+            [
+              { x: 16, y: 53, w: 25, h: 7 },
+              { x: 16, y: 60, w: 50, h: 8 },
+            ],
+            "en"
+          ),
+        ]),
+        page(10, "Blank"),
+        page(11, "Blank"),
         page(12, "Credits"),
       ],
     },

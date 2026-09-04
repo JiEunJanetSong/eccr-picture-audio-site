@@ -11,6 +11,7 @@ The following visible reading text does not have a matching recording in the fin
 | Book4 | 10 | Kenkan bio. | `book4-page10-twi.mp3` |
 | Book4 | 10 | Read again. | `book4-page10-english.mp3` |
 | Book6 | 1 and 2 | Twi Letter Cards | `book6-title.mp3` |
+| Book7 | 1 and 2 | Short /a/ Reader | `book7-subtitle.mp3` |
 
 ## Recording Notes
 

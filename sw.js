@@ -1,6 +1,6 @@
 importScripts("./offline-assets.js");
 
-const CACHE_NAME = "eccr-final-books-20260905-1";
+const CACHE_NAME = "eccr-final-books-20260905-2";
 const CACHE_PREFIX = "eccr-";
 const OFFLINE_ASSETS = self.ECCR_OFFLINE_ASSETS || [];
 const CORE_ASSETS = OFFLINE_ASSETS.filter(
