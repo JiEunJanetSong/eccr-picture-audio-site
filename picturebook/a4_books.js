@@ -1,173 +1,222 @@
-window.ECCR_A4_BOOKS = [
-  {
-    id: "book1",
-    title: "Book1",
-    assetDir: "assets/book1",
-    pages: Array.from({ length: 12 }, (_, index) => ({
-      title: `Page ${index + 1}`,
-      image: `page-${String(index + 1).padStart(2, "0")}.jpg`,
-      audio: [],
-    })),
-  },
-  {
-    id: "book2",
-    title: "Book2",
-    assetDir: "assets/book2",
-    pages: Array.from({ length: 20 }, (_, index) => ({
-      title: `Page ${index + 1}`,
-      image: `page-${String(index + 1).padStart(2, "0")}.jpg`,
-      audio: [],
-    })),
-  },
-  {
-    id: "book3",
-    title: "Book3",
-    assetDir: "assets/book3",
-    pages: [
-      { title: "Cover", image: "page-01.jpg", audio: [] },
-      { title: "Book 3", image: "page-02.jpg", audio: [] },
-      {
-        title: "Fa bi",
-        image: "page-03.jpg",
-        audio: [{ text: "Fa bi", speechText: "Fa bi.", lang: "twi", audioSrc: "audio/book3/1-Fabi.mp3", box: { x: 0, y: 0, w: 48, h: 18 } }],
-      },
-      {
-        title: "Ka bi",
-        image: "page-04.jpg",
-        audio: [{ text: "Ka bi", speechText: "Ka bi.", lang: "twi", audioSrc: "audio/book3/2-Kabi.mp3", box: { x: 0, y: 0, w: 48, h: 18 } }],
-      },
-      {
-        title: "Di bi",
-        image: "page-05.jpg",
-        audio: [{ text: "Di bi", speechText: "Di bi.", lang: "twi", audioSrc: "audio/book3/3-Dibi.mp3", box: { x: 0, y: 0, w: 48, h: 18 } }],
-      },
-      {
-        title: "Sa fa",
-        image: "page-06.jpg",
-        audio: [{ text: "Sa fa", speechText: "Sa fa.", lang: "twi", audioSrc: "audio/book3/4-Safa.mp3", box: { x: 0, y: 0, w: 48, h: 18 } }],
-      },
-      {
-        title: "Tu ko",
-        image: "page-07.jpg",
-        audio: [{ text: "Tu kɔ", speechText: "Tu kɔ.", lang: "twi", audioSrc: "audio/book3/5-Tuko.mp3", box: { x: 0, y: 0, w: 48, h: 18 } }],
-      },
-      {
-        title: "Ko da",
-        image: "page-08.jpg",
-        audio: [{ text: "Kɔ da", speechText: "Kɔ da.", lang: "twi", audioSrc: "audio/book3/6-Koda.mp3", box: { x: 0, y: 0, w: 48, h: 18 } }],
-      },
-      {
-        title: "Yi bi di",
-        image: "page-09.jpg",
-        audio: [{ text: "Yi bi di", speechText: "Yi bi di.", lang: "twi", audioSrc: "audio/book3/7-Yibidi.mp3", box: { x: 0, y: 0, w: 54, h: 18 } }],
-      },
-      {
-        title: "Sa bi we",
-        image: "page-10.jpg",
-        audio: [{ text: "Sa bi we", speechText: "Sa bi we.", lang: "twi", audioSrc: "audio/book3/8-Sabiwe.mp3", box: { x: 0, y: 0, w: 54, h: 18 } }],
-      },
-      {
-        title: "Ka bi fa",
-        image: "page-11.jpg",
-        audio: [{ text: "Ka bi fa", speechText: "Ka bi fa.", lang: "twi", audioSrc: "audio/book3/9-Kabifa.mp3", box: { x: 0, y: 0, w: 54, h: 18 } }],
-      },
-      {
-        title: "Ma me bi",
-        image: "page-12.jpg",
-        audio: [{ text: "Ma me bi", speechText: "Ma me bi.", lang: "twi", audioSrc: "audio/book3/10-Mamebi.mp3", box: { x: 0, y: 0, w: 58, h: 18 } }],
-      },
-      {
-        title: "Te me so",
-        image: "page-13.jpg",
-        audio: [{ text: "Te me so", speechText: "Te me so.", lang: "twi", audioSrc: "audio/book3/11-Temeso.mp3", box: { x: 0, y: 0, w: 58, h: 18 } }],
-      },
-      {
-        title: "Ka bi we",
-        image: "page-14.jpg",
-        audio: [{ text: "Ka bi we", speechText: "Ka bi we.", lang: "twi", audioSrc: "audio/book3/12-Kabiwe.mp3", box: { x: 0, y: 0, w: 58, h: 18 } }],
-      },
-      {
-        title: "Fa bi si me so",
-        image: "page-15.jpg",
-        audio: [{ text: "Fa bi si me so", speechText: "Fa bi si me so.", lang: "twi", audioSrc: "audio/book3/13-Fabisimeso.mp3", box: { x: 0, y: 0, w: 72, h: 18 } }],
-      },
-      {
-        title: "Sa bi gu me ho",
-        image: "page-16.jpg",
-        audio: [{ text: "Sa bi gu me ho", speechText: "Sa bi gu me ho.", lang: "twi", audioSrc: "audio/book3/14-Sabigumeho.mp3", box: { x: 0, y: 0, w: 72, h: 18 } }],
-      },
-      {
-        title: "To bi gu me ho",
-        image: "page-17.jpg",
-        audio: [{ text: "To bi gu me ho", speechText: "To bi gu me ho.", lang: "twi", audioSrc: "audio/book3/15-Tobigumeho.mp3", box: { x: 0, y: 0, w: 72, h: 18 } }],
-      },
-      {
-        title: "Yi bi ma me",
-        image: "page-18.jpg",
-        audio: [{ text: "Yi bi ma me", speechText: "Yi bi ma me.", lang: "twi", audioSrc: "audio/book3/16-Yibimame.mp3", box: { x: 0, y: 0, w: 68, h: 18 } }],
-      },
-      {
-        title: "To bi ma yen",
-        image: "page-19.jpg",
-        audio: [{ text: "To bi ma yɛn", speechText: "To bi ma yɛn.", lang: "twi", audioSrc: "audio/book3/17-Tobimayen.mp3", box: { x: 0, y: 0, w: 68, h: 18 } }],
-      },
-      {
-        title: "Ka bi na fa",
-        image: "page-20.jpg",
-        audio: [{ text: "Ka bi na fa", speechText: "Ka bi na fa.", lang: "twi", audioSrc: "audio/book3/18-Kabinafa.mp3", box: { x: 0, y: 0, w: 68, h: 18 } }],
-      },
-      {
-        title: "Papa Musa",
-        image: "page-21.jpg",
-        audio: [{ text: "Papa Musa", speechText: "Papa Musa.", lang: "twi", audioSrc: "audio/book3/19-PapaMusa.mp3", box: { x: 0, y: 0, w: 62, h: 18 } }],
-      },
-      {
-        title: "Story 1",
-        image: "page-22.jpg",
-        audio: [{ text: "Papa Musa wo nkoko mmienu, mponkye mmienu ne mma baanu.", speechText: "Papa Musa wɔ nkokɔ mmienu, mpɔnkye mmienu ne mma baanu.", lang: "twi", audioSrc: "audio/book3/20-.mp3", box: { x: 0, y: 0, w: 78, h: 22 } }],
-      },
-      {
-        title: "Story 2",
-        image: "page-23.jpg",
-        audio: [{ text: "Ne ba barima ne Ali.", speechText: "Ne ba barima ne Ali.", lang: "twi", audioSrc: "audio/book3/21-.mp3", box: { x: 0, y: 0, w: 68, h: 18 } }],
-      },
-      {
-        title: "Story 3",
-        image: "page-24.jpg",
-        audio: [{ text: "Ne ba baa ne Alima.", speechText: "Ne ba baa ne Alima.", lang: "twi", audioSrc: "audio/book3/22-.mp3", box: { x: 0, y: 0, w: 68, h: 18 } }],
-      },
-      {
-        title: "Story 4",
-        image: "page-25.jpg",
-        audio: [{ text: "Anopa biara, Ali pra mmoa no buo no mu.", speechText: "Anɔpa biara, Ali pra mmoa no buo no mu.", lang: "twi", audioSrc: "audio/book3/23-.mp3", box: { x: 0, y: 0, w: 82, h: 18 } }],
-      },
-      {
-        title: "Story 5",
-        image: "page-26.jpg",
-        audio: [{ text: "Oma mmoa no aduane di.", speechText: "Ɔma mmoa no aduane di.", lang: "twi", audioSrc: "audio/book3/24-.mp3", box: { x: 0, y: 0, w: 68, h: 18 } }],
-      },
-      {
-        title: "Story 6",
-        image: "page-27.jpg",
-        audio: [{ text: "Anopa biara, Alima pra adiho.", speechText: "Anɔpa biara, Alima pra adihɔ.", lang: "twi", audioSrc: "audio/book3/25-.mp3", box: { x: 0, y: 0, w: 74, h: 18 } }],
-      },
-      {
-        title: "Story 7",
-        image: "page-28.jpg",
-        audio: [{ text: "Oma mmoa no nsuo nom.", speechText: "Ɔma mmoa no nsuo nom.", lang: "twi", audioSrc: "audio/book3/26-.mp3", box: { x: 0, y: 0, w: 68, h: 18 } }],
-      },
-      {
-        title: "Story 8",
-        image: "page-29.jpg",
-        audio: [{ text: "Woyɛ ntɛm ko sukuu.", speechText: "Wɔyɛ ntɛm kɔ sukuu.", lang: "twi", audioSrc: "audio/book3/27-.mp3", box: { x: 0, y: 0, w: 68, h: 18 } }],
-      },
-      {
-        title: "Questions",
-        image: "page-30.jpg",
-        audio: [{ text: "Kenkan bio.", speechText: "Kenkan bio.", lang: "twi", audioSrc: "audio/book3/28-.mp3", box: { x: 28, y: 78, w: 34, h: 8 } }],
-      },
-      { title: "Blank", image: "page-31.jpg", audio: [] },
-      { title: "Credits", image: "page-32.jpg", audio: [] },
-    ],
-  },
-];
+(() => {
+  const COVER_BOX = { x: 12, y: 11, w: 76, h: 24 };
+  const BODY_BOX = { x: 8, y: 67, w: 84, h: 24 };
+  const TWI_BOX = { x: 10, y: 71, w: 80, h: 11 };
+  const ENGLISH_BOX = { x: 10, y: 82, w: 80, h: 10 };
+
+  function image(pageNumber) {
+    return `page-${String(pageNumber).padStart(2, "0")}.jpg`;
+  }
+
+  function recording(text, audioSrc, box = BODY_BOX, lang = "twi") {
+    return { text, speechText: text, audioSrc, box: { ...box }, lang };
+  }
+
+  function missing(text, box, lang = "twi") {
+    return { text, speechText: text, box: { ...box }, lang, recordingMissing: true };
+  }
+
+  function page(pageNumber, title, audio = []) {
+    return { title, image: image(pageNumber), audio };
+  }
+
+  function recordedPage(bookNumber, pageNumber, title, text = title, box = BODY_BOX, lang = "twi") {
+    return page(pageNumber, title, [
+      recording(text, `audio/book${bookNumber}/page-${String(pageNumber).padStart(2, "0")}.mp3`, box, lang),
+    ]);
+  }
+
+  function bilingualPage(bookNumber, pageNumber, twi, english) {
+    const base = `audio/book${bookNumber}/page-${String(pageNumber).padStart(2, "0")}`;
+    return page(pageNumber, twi, [
+      recording(twi, `${base}-twi.mp3`, TWI_BOX, "twi"),
+      recording(english, `${base}-en.mp3`, ENGLISH_BOX, "en"),
+    ]);
+  }
+
+  window.ECCR_A4_BOOKS = [
+    {
+      id: "book1",
+      title: "Book1",
+      assetDir: "assets/book1",
+      pages: [
+        page(1, "Me ne me fie", [recording("Me ne me fie", "audio/book1/cover.mp3", COVER_BOX)]),
+        page(2, "Me ne me fie", [recording("Me ne me fie", "audio/book1/cover.mp3", { x: 25, y: 16, w: 50, h: 10 })]),
+        recordedPage(1, 3, "Me din de Kofi."),
+        recordedPage(1, 4, "Mekɔ sukuu. Mehyɛ ataade fitaa."),
+        recordedPage(1, 5, "Me papa din de Kwadwo. Me maame din de Abena."),
+        recordedPage(1, 6, "Yɛwɔ kraman fɛfɛ bi. Kraman no di emo."),
+        recordedPage(1, 7, "M’ani gye sukuu ho. Metwerɛ m’adeɛ yie."),
+        recordedPage(1, 8, "M’AKYERƐKYERƐFOƆ", "M’akyerɛkyerɛfoɔ dɔ me."),
+        page(9, "Blank"),
+        page(10, "Blank"),
+        page(11, "Blank"),
+        page(12, "Credits"),
+      ],
+    },
+    {
+      id: "book2",
+      title: "Book2",
+      assetDir: "assets/book2",
+      pages: [
+        page(1, "Ama ne Kofi", [recording("Ama ne Kofi", "audio/book2/cover.mp3", COVER_BOX)]),
+        page(2, "Ama ne Kofi", [recording("Ama ne Kofi", "audio/book2/cover.mp3", { x: 25, y: 16, w: 50, h: 10 })]),
+        recordedPage(2, 3, "Anɔpa aba. Owia apue."),
+        recordedPage(2, 4, "Ama ne Kofi asɔre."),
+        recordedPage(2, 5, "Wɔka sɛ, “Maakye, Maame.” Maame ka sɛ, “Yaa, me mma.”"),
+        recordedPage(2, 6, "Wɔpra fie hɔ. Fie hɔ ayɛ fɛ."),
+        recordedPage(2, 7, "Wɔhohoro wɔn nsa."),
+        recordedPage(2, 8, "Wɔdi banku ne nkruma frɔeɛ."),
+        recordedPage(2, 9, "Kwan so, wɔkyea Nana. Wɔka sɛ, “Maakye, Nana.”"),
+        recordedPage(2, 10, "Wɔfa wɔn nwoma. Wɔkɔ sukuu."),
+        recordedPage(2, 11, "Sukuu mu, wɔsua nnyegyeɛ."),
+        recordedPage(2, 12, "Ama twerɛ ne din. Ne din de Ama."),
+        recordedPage(2, 13, "Ahomegyeɛ berɛ mu, wɔdi kwadu."),
+        recordedPage(2, 14, "Wɔpɔn a, wɔboa wɔ dwa so."),
+        recordedPage(2, 15, "Anwummerɛ, abusua no hyia. Nana to anansesɛm."),
+        recordedPage(2, 16, "Ama ne Kofi sere. Wɔka sɛ, “Yɛda wo ase.”"),
+        page(17, "Nsɛmmisa", [
+          recording(
+            "Hwan na ɔkɔɔ sukuu? Deɛn na Ama kenkan? Hwan na ɔtoo anansesɛm no?",
+            "audio/book2/page-17.mp3",
+            { x: 14, y: 18, w: 72, h: 38 }
+          ),
+          missing("Kenkan bio.", { x: 30, y: 78, w: 40, h: 9 }),
+        ]),
+        page(18, "Blank"),
+        page(19, "Blank"),
+        page(20, "Credits"),
+      ],
+    },
+    {
+      id: "book3",
+      title: "Book3",
+      assetDir: "assets/book3",
+      pages: [
+        page(1, "Asante Twi Reading Practice", [
+          missing("Asante Twi Reading Practice", { x: 7, y: 13, w: 86, h: 9 }, "en"),
+        ]),
+        page(2, "Asante Twi Reading Practice", [
+          missing("Asante Twi Reading Practice", { x: 10, y: 17, w: 80, h: 9 }, "en"),
+        ]),
+        recordedPage(3, 3, "Fa bi"),
+        recordedPage(3, 4, "Ka bi"),
+        recordedPage(3, 5, "Di bi"),
+        recordedPage(3, 6, "Sa fa"),
+        recordedPage(3, 7, "Tu kɔ"),
+        recordedPage(3, 8, "Kɔ da"),
+        recordedPage(3, 9, "Yi bi di"),
+        recordedPage(3, 10, "Sa bi we"),
+        recordedPage(3, 11, "Ka bi fa"),
+        recordedPage(3, 12, "Ma me bi"),
+        recordedPage(3, 13, "Te me so"),
+        recordedPage(3, 14, "Ka bi we"),
+        recordedPage(3, 15, "Fa bi si me so"),
+        recordedPage(3, 16, "Sa bi gu me ho"),
+        recordedPage(3, 17, "To bi gu me ho"),
+        recordedPage(3, 18, "Yi bi ma me"),
+        recordedPage(3, 19, "To bi ma yɛn"),
+        recordedPage(3, 20, "Ka bi na fa"),
+        recordedPage(3, 21, "Papa Musa"),
+        recordedPage(3, 22, "Papa Musa wɔ nkokɔ mmienu, mpɔnkye mmienu ne mma baanu."),
+        recordedPage(3, 23, "Ne ba barima ne Ali."),
+        recordedPage(3, 24, "Ne ba baa ne Alima."),
+        recordedPage(3, 25, "Anɔpa biara, Ali pra mmoa no buo no mu."),
+        recordedPage(3, 26, "Ɔma mmoa no aduane di."),
+        recordedPage(3, 27, "Anɔpa biara, Alima pra adihɔ."),
+        recordedPage(3, 28, "Ɔma mmoa no nsuo nom."),
+        recordedPage(3, 29, "Wɔyɛ ntɛm kɔ sukuu."),
+        page(30, "Nsɛmmisa", [
+          recording(
+            "Hwan ne Ali? Nkokɔ sɛn na Papa Musa wɔ? Adwuma bɛn na Ali yɛ no anɔpa? Adwuma bɛn na Alima yɛ no anɔpa? Adɛn nti na wɔboa mmoa no? Wo nso, deɛn na woyɛ ansa na wakɔ sukuu?",
+            "audio/book3/page-30.mp3",
+            { x: 7, y: 8, w: 86, h: 70 }
+          ),
+          missing("Kenkan bio.", { x: 17, y: 79, w: 66, h: 11 }),
+        ]),
+        page(31, "Blank"),
+        page(32, "Credits"),
+      ],
+    },
+    {
+      id: "book4",
+      title: "Book4",
+      assetDir: "assets/book4",
+      pages: [
+        page(1, "Aku ne Ɔkra", [
+          recording("Aku ne Ɔkra", "audio/book4/cover.mp3", { x: 25, y: 11, w: 50, h: 10 }),
+          missing("Aku and the Cat.", { x: 30, y: 20, w: 40, h: 6 }, "en"),
+        ]),
+        page(2, "Aku ne Ɔkra", [recording("Aku ne Ɔkra", "audio/book4/cover.mp3", { x: 25, y: 16, w: 50, h: 10 })]),
+        bilingualPage(4, 3, "Aku yɛ ɔbaa.", "Aku is a girl."),
+        bilingualPage(4, 4, "Aku te mpa so.", "Aku is sitting on a bed."),
+        bilingualPage(4, 5, "Ɔwɔ ɔkra tuntum bi.", "She has a black cat."),
+        bilingualPage(4, 6, "Aku pɛ ɔkra no asɛm.", "Aku likes the cat’s story / wants to talk to the cat."),
+        bilingualPage(4, 7, "Ɔkra no nso pɛ Aku asɛm.", "The cat also likes Aku’s story / wants to listen to Aku."),
+        bilingualPage(4, 8, "Ɔkra ho hia.", "The cat is important."),
+        page(9, "Comprehension Questions", [
+          recording(
+            "Hwan ne Aku? Who is Aku? Aboa bɛn na Aku wɔ? Which animal does Aku have? Aku pɛ aboa bɛn asɛm? Which animal does Aku like? Aboa bɛn na wopɛ n’asɛm? Adɛn nti a? Which animal do you like? Why? Adɛn nti na ɔkra ho hia? Why is a cat important?",
+            "audio/book4/page-09.mp3",
+            { x: 7, y: 12, w: 86, h: 80 },
+            "twi-en"
+          ),
+        ]),
+        page(10, "Kenkan bio.", [
+          missing("Kenkan bio.", TWI_BOX),
+          missing("Read again.", ENGLISH_BOX, "en"),
+        ]),
+        page(11, "Blank"),
+        page(12, "Credits"),
+      ],
+    },
+    {
+      id: "book5",
+      title: "Book5",
+      assetDir: "assets/book5",
+      pages: [
+        page(1, "Asɔ ne Ako", [
+          recording("Asɔ ne Ako", "audio/book5/cover-twi.mp3", { x: 25, y: 11, w: 50, h: 10 }),
+          recording("Aso and the Parrot", "audio/book5/cover-en.mp3", { x: 28, y: 20, w: 44, h: 7 }, "en"),
+        ]),
+        page(2, "Asɔ ne Ako", [recording("Asɔ ne Ako", "audio/book5/cover-twi.mp3", { x: 25, y: 16, w: 50, h: 10 })]),
+        bilingualPage(5, 3, "Asɔ yɛ ɔbaa.", "Aso is a girl."),
+        bilingualPage(5, 4, "Asɔ wɔ ako.", "Aso has a parrot."),
+        bilingualPage(5, 5, "Asɔ ma ako no nsuo.", "Aso gives the parrot water."),
+        bilingualPage(5, 6, "Ako nom nsuo.", "The parrot drinks water."),
+        bilingualPage(5, 7, "Ako sɔsɔ aburo.", "The parrot pecks/eats maize."),
+        bilingualPage(5, 8, "Asɔ pɛ ako no asɛm.", "Aso likes the parrot."),
+        page(9, "Nsɛmmisa", [
+          recording(
+            "Aboa bɛn na Asɔ wɔ? What bird does Aso have? Aduane bɛn na ako di? What food does the parrot eat? Anomaa bɛn na wopɛ n’asɛm? Adɛn nti a? Which bird do you like? Why? Fa ako yɛ ɔkasamu. Use parrot in a sentence.",
+            "audio/book5/page-09.mp3",
+            { x: 7, y: 8, w: 86, h: 82 },
+            "twi-en"
+          ),
+        ]),
+        page(10, "Blank"),
+        page(11, "Blank"),
+        page(12, "Credits"),
+      ],
+    },
+    {
+      id: "book6",
+      title: "Book6",
+      assetDir: "assets/book6",
+      pages: [
+        page(1, "Twi Letter Cards", [missing("Twi Letter Cards", COVER_BOX, "en")]),
+        page(2, "Twi Letter Cards", [missing("Twi Letter Cards", { x: 20, y: 16, w: 60, h: 18 }, "en")]),
+        recordedPage(6, 3, "ky · kyɛ · share", "ky, kyɛ, share", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
+        recordedPage(6, 4, "gy · gya · fire", "gy, gya, fire", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
+        recordedPage(6, 5, "hy · hyɛ · wear", "hy, hyɛ, wear", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
+        recordedPage(6, 6, "ny · nyɛ · not / do not", "ny, nyɛ, not or do not", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
+        recordedPage(6, 7, "tw · twa · cut", "tw, twa, cut", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
+        recordedPage(6, 8, "dw · dwa · peel (cassava)", "dw, dwa, peel cassava", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
+        recordedPage(6, 9, "kw · kwaeɛ · forest", "kw, kwaeɛ, forest", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
+        recordedPage(6, 10, "hw · hwɛ · look", "hw, hwɛ, look", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
+        recordedPage(6, 11, "nw · nwom · song / music", "nw, nwom, song or music", { x: 14, y: 11, w: 72, h: 55 }, "twi-en"),
+        page(12, "Credits"),
+      ],
+    },
+  ];
+})();

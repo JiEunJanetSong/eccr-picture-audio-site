@@ -1,10 +1,10 @@
 importScripts("./offline-assets.js");
 
-const CACHE_NAME = "eccr-airplane-20260904-1";
+const CACHE_NAME = "eccr-final-books-20260905-1";
 const CACHE_PREFIX = "eccr-";
 const OFFLINE_ASSETS = self.ECCR_OFFLINE_ASSETS || [];
 const CORE_ASSETS = OFFLINE_ASSETS.filter(
-  (asset) => !asset.includes("/assets/book") && !asset.includes("/audio/book3/")
+  (asset) => !asset.includes("/assets/book") && !asset.includes("/audio/book")
 );
 const CACHE_BATCH_SIZE = 4;
 let offlineCacheJob = null;

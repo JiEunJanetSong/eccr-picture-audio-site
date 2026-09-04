@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "check": "node --check picturebook/app.js && node --check picturebook/yaw_books.js && node --check audio/app.js",
+    "build:offline": "node scripts/generate-offline-assets.mjs",
+    "check": "node --check picturebook/a4_books.js && node --check picturebook/app.js && node --check audio/app.js && node --check pwa.js && node --check sw.js && node --check offline-assets.js",
     "serve": "python3 -m http.server 4173"
   }
 }

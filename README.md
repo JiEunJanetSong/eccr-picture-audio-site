@@ -4,8 +4,20 @@ Static deployment package for the ECCR reading tools.
 
 ## Apps
 
-- `/picturebook/`: image-based picture book reader. Learners tap text on the page.
-- `/audio/`: list-based audio practice app using the same Yaw Janet book data.
+- `/picturebook/`: image-based Book1-Book6 reader. Learners tap text on the page.
+- `/audio/`: list-based audio practice app using the same Book1-Book6 data.
+
+The final book images and teacher recordings are packaged with the site. Twi and English body text in Book4 and Book5 use separate clips, so each language line plays its matching recording.
+
+## Offline Build
+
+After replacing a book image or recording, rebuild the service-worker asset list:
+
+```sh
+npm run build:offline
+```
+
+The Picture Book `Save offline` action downloads all six books and recordings for later use without a network connection. Missing source recordings are tracked in `MISSING_VOICE_RECORDINGS.md`.
 
 ## TTS Backend
 

@@ -1,7 +1,7 @@
 {
   "name": "ECCR Picture Book",
   "short_name": "ECCR",
-  "description": "Offline picture book reader for ECCR Book1-Book3.",
+  "description": "Offline picture book reader for ECCR Book1-Book6.",
   "start_url": "./picturebook/",
   "scope": "./",
   "display": "standalone",

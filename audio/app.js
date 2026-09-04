@@ -192,13 +192,16 @@ function playItem(item, button) {
   const text = item.speechText || item.text;
   const url = buildTtsUrl(text, item);
   if (!url) {
+    stopAudio();
     els.statusPill.textContent = "Audio coming soon";
     return Promise.resolve();
   }
   clearPlaying();
   stopAudio(false);
   button?.classList.add("playing");
-  els.statusPill.textContent = item.lang === "twi" ? "Playing Twi" : "Playing English";
+  els.statusPill.textContent = item.audioSrc
+    ? "Playing recording"
+    : (item.lang === "twi" ? "Playing Twi" : "Playing English");
 
   return new Promise((resolve) => {
     state.audio.pause();
@@ -262,6 +265,9 @@ function getItemTtsConfig(item = {}) {
 }
 
 function buildTtsUrl(text, item = {}) {
+  if (item.recordingMissing) {
+    return "";
+  }
   if (item.audioSrc) {
     return `../picturebook/${item.audioSrc}`;
   }
